@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss'
 import theme from 'tailwindcss/defaultTheme'
 
 export default {
-  darkMode: 'class',
+  darkMode: false,
   content: ['./src/app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     screens: {

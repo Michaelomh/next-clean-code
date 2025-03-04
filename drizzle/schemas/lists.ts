@@ -3,20 +3,21 @@ import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 import UsersTable from './users'
 
 export const ListsTable = sqliteTable('posts', {
-  id: integer('id').primaryKey(),
-  title: text('title').notNull(),
-  content: text('content').notNull(),
-  userId: integer('user_id')
+  id: integer().primaryKey(),
+  title: text().notNull(),
+  content: text().notNull(),
+  userId: integer()
     .notNull()
     .references(() => UsersTable.id, { onDelete: 'cascade' }),
-  createdAt: text('created_at')
+  createdAt: text()
     .default(sql`(CURRENT_TIMESTAMP)`)
     .notNull(),
-  updateAt: integer('updated_at', { mode: 'timestamp' }).$onUpdate(() => new Date()),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).$onUpdate(() => new Date()),
+  completedAt: integer('completed_at', { mode: 'timestamp' }),
 })
 
 export default ListsTable
 
 // is there a better way of doing this?
-export type InsertPost = typeof ListsTable.$inferInsert
-export type SelectPost = typeof ListsTable.$inferSelect
+export type InsertList = typeof ListsTable.$inferInsert
+export type SelectList = typeof ListsTable.$inferSelect
