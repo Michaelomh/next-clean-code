@@ -17,7 +17,3 @@ export const ListsTable = sqliteTable('posts', {
 })
 
 export default ListsTable
-
-// is there a better way of doing this?
-export type InsertList = typeof ListsTable.$inferInsert
-export type SelectList = typeof ListsTable.$inferSelect

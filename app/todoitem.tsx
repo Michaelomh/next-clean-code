@@ -1,15 +1,15 @@
 'use client'
 
-import { SelectList } from '@/drizzle/schemas/lists'
+import { Todo } from '@/src/entities/models/todo'
 import { Checkbox } from './_components/ui/checkbox'
 
 type TodoItemProps = {
-  todo: SelectList
+  todo: Todo
 }
 
 export function TodoItem({ todo }: TodoItemProps) {
   return (
-    <>
+    <div className="flex items-center gap-2">
       <Checkbox
         id={`todo-${todo.id}`}
         checked={todo.completedAt !== null}
@@ -21,6 +21,6 @@ export function TodoItem({ todo }: TodoItemProps) {
       >
         {todo.title}
       </label>
-    </>
+    </div>
   )
 }

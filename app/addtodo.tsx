@@ -4,14 +4,23 @@ import { useState } from 'react'
 import { PlusCircle } from 'lucide-react'
 import { Input } from './_components/ui/input'
 import { Button } from './_components/ui/button'
+import { createTodo } from './action'
 
 export function AddTodo() {
   const [text, setText] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('to submit', text)
-    setText('')
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const res = await createTodo(text)
+    if (res) {
+      if (res.error) {
+        console.error(res.error)
+      } else if (res.success) {
+        console.log('SUCCESS')
+        setText('')
+      }
+    }
   }
 
   return (

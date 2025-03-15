@@ -4,7 +4,7 @@ import { z } from 'zod'
 // Define Schema as an object with all the env variables and types
 const envSchema = z.object({
   TURSO_DATABASE_URL: z.string(),
-  TURSO_AUTH_TOKEN: z.string(),
+  TURSO_AUTH_TOKEN: z.string().nullable(),
   NODE_ENV: z.union([z.literal('development'), z.literal('production')]).default('development'),
   ENV: z.union([z.literal('development'), z.literal('production')]).default('development'),
 })
