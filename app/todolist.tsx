@@ -1,12 +1,18 @@
 import { Card } from './_components/ui/card'
 import { AddTodo } from './addtodo'
-import { db } from '@/drizzle'
 import { TodoItem } from './todoitem'
-import { Todo } from '@/src/entities/models/todo'
+import { getTodos } from './action'
 
 export default async function TodoList() {
-  // move to clean code architecture
-  const todos: Todo[] = await db.query.lists.findMany()
+  const todos = await getTodos()
+
+  if ('error' in todos) {
+    return (
+      <div className="space-y-6">
+        <h2>{todos.error}</h2>
+      </div>
+    )
+  }
 
   return (
     <div className="space-y-6">

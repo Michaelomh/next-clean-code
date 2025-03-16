@@ -17,7 +17,6 @@ export function AddTodo() {
       if (res.error) {
         console.error(res.error)
       } else if (res.success) {
-        console.log('SUCCESS')
         setText('')
       }
     }
