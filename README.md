@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) that uses clean architecture to build eveyrthing.
+This is a [Next.js](https://nextjs.org) that uses clean architecture to build eveyrthing. This clean architecture is based on the implementation done by Lazar Nikolov.
+
+> **🧑‍💻 Github Repo:** https://github.com/nikolovlazar/nextjs-clean-architecture/tree/main
+>
+> **📺 Video:** https://www.youtube.com/watch?v=jJVAla0dWJo
 
 ## Clean Architecture
 
@@ -68,5 +72,3 @@ We only need to unit test application and interface-adapters as they are the onl
 ### UI
 
 For UI, you don't have to test everything. Mainly test specific UI pertaining to some kind of business logic. E.g. Conditional rendering, toast appearing after an action, verify history.location after success form submittion, etc.
-
-The UI should be form
