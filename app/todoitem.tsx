@@ -1,7 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import { Checkbox } from './_components/ui/checkbox'
 import { toggleTodo } from './action'
+import { Loader2 } from 'lucide-react'
 
 type TodoItemProps = {
   todo: {
@@ -14,13 +16,21 @@ type TodoItemProps = {
 }
 
 export function TodoItem({ todo }: TodoItemProps) {
+  const [loading, setLoading] = useState(false)
+
   const onCheckboxChange = async () => {
+    setLoading(true)
     await toggleTodo(todo.id)
+    setLoading(false)
   }
 
   return (
     <div className="flex items-center gap-2">
-      <Checkbox id={`todo-${todo.id}`} checked={todo.completedAt !== null} onCheckedChange={onCheckboxChange} />
+      {loading ? (
+        <Loader2 color="white" size={16} className="animate-spin" />
+      ) : (
+        <Checkbox id={`todo-${todo.id}`} checked={todo.completedAt !== null} onCheckedChange={onCheckboxChange} />
+      )}
       <label
         htmlFor={`todo-${todo.id}`}
         className={`flex-1 cursor-pointer text-neutral-200 ${todo.completedAt !== null ? 'line-through' : ''}`}

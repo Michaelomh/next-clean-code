@@ -8,9 +8,11 @@ import { createTodo } from './action'
 
 export function AddTodo() {
   const [text, setText] = useState('')
+  const [isLoading, setLoading] = useState(false)
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    setLoading(true)
 
     const res = await createTodo(text)
     if (res) {
@@ -20,6 +22,7 @@ export function AddTodo() {
         setText('')
       }
     }
+    setLoading(false)
   }
 
   return (
@@ -31,7 +34,7 @@ export function AddTodo() {
         onChange={(e) => setText(e.target.value)}
         className="flex-1"
       />
-      <Button type="submit" disabled={!text.trim()}>
+      <Button type="submit" disabled={!text.trim()} loading={isLoading}>
         <PlusCircle className="mr-2 h-4 w-4" />
         Add
       </Button>
