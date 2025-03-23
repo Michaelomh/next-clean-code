@@ -1,4 +1,4 @@
-import { Card } from './_components/ui/card'
+import { Card } from './_components/ui/card/card'
 import { AddTodo } from './addtodo'
 import { TodoItem } from './todoitem'
 import { getTodos } from './action'

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Checkbox } from './_components/ui/checkbox'
+import { Checkbox } from './_components/ui/checkbox/checkbox'
 import { toggleTodo } from './action'
 import { Loader2 } from 'lucide-react'
 

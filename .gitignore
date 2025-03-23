@@ -44,3 +44,5 @@ next-env.d.ts
 drizzle/dev.db
 drizzle/dev.db-shm
 drizzle/dev.db-wal
+
+*storybook.log

@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { PlusCircle } from 'lucide-react'
-import { Input } from './_components/ui/input'
-import { Button } from './_components/ui/button'
+import { Input } from './_components/ui/input/input'
+import { Button } from './_components/ui/button/button'
 import { createTodo } from './action'
 
 export function AddTodo() {
