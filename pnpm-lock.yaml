@@ -26,9 +26,6 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.1.2
         version: 1.1.2(@types/react@19.0.10)(react@19.0.0)
-      '@radix-ui/react-toggle':
-        specifier: ^1.1.2
-        version: 1.1.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -78,12 +75,15 @@ importers:
       '@storybook/addon-onboarding':
         specifier: ^8.6.8
         version: 8.6.8(storybook@8.6.8(prettier@3.5.3))
+      '@storybook/addon-themes':
+        specifier: ^8.6.8
+        version: 8.6.9(storybook@8.6.8(prettier@3.5.3))
       '@storybook/blocks':
         specifier: ^8.6.8
         version: 8.6.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.8(prettier@3.5.3))
       '@storybook/experimental-addon-test':
         specifier: ^8.6.8
-        version: 8.6.8(@vitest/browser@3.0.9(@types/node@20.17.22)(playwright@1.51.1)(typescript@5.7.3)(vite@6.2.2(@types/node@20.17.22)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.39.0))(vitest@3.0.9))(@vitest/runner@3.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.8(prettier@3.5.3))(vitest@3.0.9(@types/node@20.17.22)(@vitest/browser@3.0.9)(jiti@2.4.2)(lightningcss@1.29.1)(msw@2.7.3(@types/node@20.17.22)(typescript@5.7.3))(terser@5.39.0))
+        version: 8.6.8(@vitest/browser@3.0.9)(@vitest/runner@3.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.8(prettier@3.5.3))(vitest@3.0.9)
       '@storybook/experimental-nextjs-vite':
         specifier: 8.6.8
         version: 8.6.8(@babel/core@7.26.10)(@storybook/test@8.6.8(storybook@8.6.8(prettier@3.5.3)))(next@15.2.0(@babel/core@7.26.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.36.0)(storybook@8.6.8(prettier@3.5.3))(typescript@5.7.3)(vite@6.2.2(@types/node@20.17.22)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.39.0))
@@ -110,7 +110,7 @@ importers:
         version: 3.0.9(@types/node@20.17.22)(playwright@1.51.1)(typescript@5.7.3)(vite@6.2.2(@types/node@20.17.22)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.39.0))(vitest@3.0.9)
       '@vitest/coverage-v8':
         specifier: ^3.0.9
-        version: 3.0.9(@vitest/browser@3.0.9(@types/node@20.17.22)(playwright@1.51.1)(typescript@5.7.3)(vite@6.2.2(@types/node@20.17.22)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.39.0))(vitest@3.0.9))(vitest@3.0.9(@types/node@20.17.22)(@vitest/browser@3.0.9)(jiti@2.4.2)(lightningcss@1.29.1)(msw@2.7.3(@types/node@20.17.22)(typescript@5.7.3))(terser@5.39.0))
+        version: 3.0.9(@vitest/browser@3.0.9)(vitest@3.0.9)
       drizzle-kit:
         specifier: ^0.30.5
         version: 0.30.5
@@ -1152,19 +1152,6 @@ packages:
       '@types/react':
         optional: true
 
-  '@radix-ui/react-toggle@1.1.2':
-    resolution: {integrity: sha512-lntKchNWx3aCHuWKiDY+8WudiegQvBpDRAYL8dKLRvKEH8VOpl0XX6SSU/bUBqIRJbcTy4+MW06Wv8vgp10rzQ==}
-    peerDependencies:
-      '@types/react': '*'
-      '@types/react-dom': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-
   '@radix-ui/react-use-callback-ref@1.1.0':
     resolution: {integrity: sha512-CasTfvsy+frcFkbXtSJ2Zu9JHpN8TYKxkgJGWbjiZhFivxaeW7rMeZt7QELGVLaYVfFMsKHjb7Ak0nMEe+2Vfw==}
     peerDependencies:
@@ -1367,6 +1354,11 @@ packages:
     resolution: {integrity: sha512-Zz+/ctGgp8qbml9yB4D/KrBYaHl51TJ733bfhdCWcs2vGySUDMP+FV0f5AFr6kL2mAO1ECkppBboP8cUvAPslw==}
     peerDependencies:
       storybook: ^8.6.8
+
+  '@storybook/addon-themes@8.6.9':
+    resolution: {integrity: sha512-2kilW6sOhRzgkzU9RmMbRBErlb/RtYdq3eJxC4rVN5+qZaTJiVytXDn7dz1XgA+VB2Qpsd1IKrfqJ2ybp8UvlA==}
+    peerDependencies:
+      storybook: ^8.6.9
 
   '@storybook/addon-toolbars@8.6.8':
     resolution: {integrity: sha512-E848JdbXO6CKNN/cHyovbB7OU+FxMaQy6s3xTF4yEx9zoFgaaC+Gm3AZnFdOdfZx6tuy2wvzzIrKBCEiAZktGA==}
@@ -4722,17 +4714,6 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.0.10
 
-  '@radix-ui/react-toggle@1.1.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@radix-ui/primitive': 1.1.1
-      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@19.0.10)(react@19.0.0)
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-    optionalDependencies:
-      '@types/react': 19.0.10
-      '@types/react-dom': 19.0.4(@types/react@19.0.10)
-
   '@radix-ui/react-use-callback-ref@1.1.0(@types/react@19.0.10)(react@19.0.0)':
     dependencies:
       react: 19.0.0
@@ -4909,6 +4890,11 @@ snapshots:
       storybook: 8.6.8(prettier@3.5.3)
       ts-dedent: 2.2.0
 
+  '@storybook/addon-themes@8.6.9(storybook@8.6.8(prettier@3.5.3))':
+    dependencies:
+      storybook: 8.6.8(prettier@3.5.3)
+      ts-dedent: 2.2.0
+
   '@storybook/addon-toolbars@8.6.8(storybook@8.6.8(prettier@3.5.3))':
     dependencies:
       storybook: 8.6.8(prettier@3.5.3)
@@ -4969,7 +4955,7 @@ snapshots:
     dependencies:
       type-fest: 2.19.0
 
-  '@storybook/experimental-addon-test@8.6.8(@vitest/browser@3.0.9(@types/node@20.17.22)(playwright@1.51.1)(typescript@5.7.3)(vite@6.2.2(@types/node@20.17.22)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.39.0))(vitest@3.0.9))(@vitest/runner@3.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.8(prettier@3.5.3))(vitest@3.0.9(@types/node@20.17.22)(@vitest/browser@3.0.9)(jiti@2.4.2)(lightningcss@1.29.1)(msw@2.7.3(@types/node@20.17.22)(typescript@5.7.3))(terser@5.39.0))':
+  '@storybook/experimental-addon-test@8.6.8(@vitest/browser@3.0.9)(@vitest/runner@3.0.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(storybook@8.6.8(prettier@3.5.3))(vitest@3.0.9)':
     dependencies:
       '@storybook/global': 5.0.0
       '@storybook/icons': 1.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -5342,7 +5328,7 @@ snapshots:
       - utf-8-validate
       - vite
 
-  '@vitest/coverage-v8@3.0.9(@vitest/browser@3.0.9(@types/node@20.17.22)(playwright@1.51.1)(typescript@5.7.3)(vite@6.2.2(@types/node@20.17.22)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.39.0))(vitest@3.0.9))(vitest@3.0.9(@types/node@20.17.22)(@vitest/browser@3.0.9)(jiti@2.4.2)(lightningcss@1.29.1)(msw@2.7.3(@types/node@20.17.22)(typescript@5.7.3))(terser@5.39.0))':
+  '@vitest/coverage-v8@3.0.9(@vitest/browser@3.0.9)(vitest@3.0.9)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 1.0.2
@@ -6028,7 +6014,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.25.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.8.3(eslint-plugin-import@2.31.0)(eslint@9.21.0(jiti@2.4.2)))(eslint@9.21.0(jiti@2.4.2)):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.25.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.8.3)(eslint@9.21.0(jiti@2.4.2)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -6050,7 +6036,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.21.0(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.25.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.8.3(eslint-plugin-import@2.31.0)(eslint@9.21.0(jiti@2.4.2)))(eslint@9.21.0(jiti@2.4.2))
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.25.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.8.3)(eslint@9.21.0(jiti@2.4.2))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3

@@ -41,7 +41,6 @@
     "@chromatic-com/storybook": "^3",
     "@eslint/eslintrc": "^3",
     "@storybook/addon-essentials": "^8.6.8",
-    "@storybook/addon-onboarding": "^8.6.8",
     "@storybook/blocks": "^8.6.8",
     "@storybook/experimental-addon-test": "^8.6.8",
     "@storybook/experimental-nextjs-vite": "8.6.8",

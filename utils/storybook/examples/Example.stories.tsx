@@ -4,7 +4,7 @@ import { fn } from '@storybook/test'
 import { Button } from './Example'
 
 const meta = {
-  title: 'Design System/Button',
+  title: 'Design System/Example',
   component: Button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -33,6 +33,13 @@ export const Secondary: Story = {
   args: {
     label: 'Button',
   },
+  decorators: [
+    (Story) => (
+      <div >
+        <Story />
+      </div>
+    ),
+  ],
 }
 
 export const Large: Story = {
