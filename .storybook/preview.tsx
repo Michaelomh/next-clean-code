@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { withThemeByDataAttribute } from '@storybook/addon-themes'
 import '../app/globals.css'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { ColorModeToggle } from '../app/_components/shared/color-mode-toggle'
@@ -25,12 +24,4 @@ export const decorators = [
       </NextThemesProvider>
     )
   },
-  withThemeByDataAttribute({
-    themes: {
-      light: 'light',
-      dark: 'dark',
-    },
-    defaultTheme: 'light',
-    attributeName: 'data-mode',
-  }),
 ]

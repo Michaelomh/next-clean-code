@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Roboto_Flex, Roboto_Mono } from 'next/font/google'
 import './globals.css'
 import { TailwindIndicator } from './_components/shared/tailwind-indicator'
 import { ThemeProvider } from './_components/shared/theme-provider'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const robotoFlex = Roboto_Flex({
+  variable: '--font-roboto-flex',
   subsets: ['latin'],
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const robotoMono = Roboto_Mono({
+  variable: '--font-roboto-mono',
   subsets: ['latin'],
 })
 
@@ -26,8 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${robotoFlex.variable} ${robotoMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <p className="font-sans">Roboto Flex</p>
+          <p className="font-mono">Roboto Mono</p>
           {children}
           <TailwindIndicator />
         </ThemeProvider>

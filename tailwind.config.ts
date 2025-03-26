@@ -1,23 +1,11 @@
 import type { Config } from 'tailwindcss'
-import theme from 'tailwindcss/defaultTheme'
 
 export default {
   // Toggle dark-mode based on .dark class or data-mode="dark"
   darkMode: ['class', '[data-mode="dark"]'],
   content: ['./src/app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    screens: {
-      // default (target mobile) - < 768px
-      // md (target tablet) - 768px - 1279px
-      md: '768px',
-      // lg (target desktop) - > 1280px
-      lg: '1280px',
-    },
     extend: {
-      fontFamily: {
-        sans: ['var(--font-geist-sans)', ...theme.fontFamily.sans],
-        mono: ['var(--font-geist-mono)', ...theme.fontFamily.mono],
-      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -59,11 +47,6 @@ export default {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
       },
     },
   },

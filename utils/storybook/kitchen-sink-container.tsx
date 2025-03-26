@@ -6,15 +6,17 @@ export const KitchenSinkBox = ({
   span,
   innerClassName,
   outerClassName,
+  containerClassName,
 }: React.PropsWithChildren<{
   description: string
   span: number
   innerClassName?: string
   outerClassName?: string
+  containerClassName?: string
 }>) => {
   return (
     <div
-      className="flex min-h-32 flex-col justify-between rounded-md border-2"
+      className={cn('flex min-h-32 flex-col justify-between rounded-md border-2', containerClassName)}
       style={{
         gridColumnStart: `span ${span}`,
       }}
