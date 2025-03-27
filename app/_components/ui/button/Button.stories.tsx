@@ -7,7 +7,7 @@ import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-container'
 import { User } from 'lucide-react'
 
 export default {
-  title: 'Design System/Button',
+  title: 'Design System/Button, IconButton',
   component: Button,
   argTypes: {
     children: {
@@ -18,6 +18,8 @@ export default {
     },
     variant: {
       description: 'Sets the `Button` variant style.',
+      control: 'select',
+      options: ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'],
       table: { category: 'Display', type: { summary: 'default | secondary | outline | ghost | destructive | link' } },
       defaultValue: { summary: 'default' },
     },
@@ -28,9 +30,11 @@ export default {
     },
     size: {
       description: 'Sets the `Button` size.',
+      control: 'select',
+      options: ['sm', 'md', 'lg', 'icon-sm', 'icon-md', 'icon-lg'],
       table: {
         category: 'Display',
-        type: { summary: 'sm | md | lg | full | icon-sm | icon-md | icon-lg' },
+        type: { summary: 'sm | md | lg  | icon-sm | icon-md | icon-lg' },
         defaultValue: { summary: 'md' },
       },
     },
@@ -92,6 +96,8 @@ export default {
     disabled: false,
     loading: false,
     children: 'Label',
+    fullWidth: false,
+    asChild: false,
   },
 } as Meta<typeof Button>
 
@@ -104,7 +110,7 @@ export const Controls = ControlTemplate.bind({})
 const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
   return (
     <>
-      <KitchenSinkContainer header="Default variant" subHeader="Showcases all default  variants">
+      <KitchenSinkContainer header="Default variant" subHeader="Showcases all default variants">
         <KitchenSinkBox description="button" span={4}>
           <Button variant="default">default</Button>
         </KitchenSinkBox>
@@ -132,7 +138,7 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         <KitchenSinkBox description="" span={4}></KitchenSinkBox>
       </KitchenSinkContainer>
 
-      <KitchenSinkContainer header="Secondary variant" subHeader="Showcases all secondary  variants">
+      <KitchenSinkContainer header="Secondary variant" subHeader="Showcases all secondary variants">
         <KitchenSinkBox description="button" span={4}>
           <Button variant="secondary">secondary</Button>
         </KitchenSinkBox>
@@ -160,7 +166,7 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         <KitchenSinkBox description="" span={4}></KitchenSinkBox>
       </KitchenSinkContainer>
 
-      <KitchenSinkContainer header="Outline variant" subHeader="Showcases all outline  variants">
+      <KitchenSinkContainer header="Outline variant" subHeader="Showcases all outline variants">
         <KitchenSinkBox description="button" span={4}>
           <Button variant="outline">outline</Button>
         </KitchenSinkBox>
@@ -188,7 +194,7 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         <KitchenSinkBox description="" span={4}></KitchenSinkBox>
       </KitchenSinkContainer>
 
-      <KitchenSinkContainer header="Ghost variant" subHeader="Showcases all ghost  variants">
+      <KitchenSinkContainer header="Ghost variant" subHeader="Showcases all ghost variants">
         <KitchenSinkBox description="button" span={4}>
           <Button variant="ghost">ghost</Button>
         </KitchenSinkBox>
@@ -216,7 +222,7 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         <KitchenSinkBox description="" span={4}></KitchenSinkBox>
       </KitchenSinkContainer>
 
-      <KitchenSinkContainer header="Destructive variant" subHeader="Showcases all destructive  variants">
+      <KitchenSinkContainer header="Destructive variant" subHeader="Showcases all destructive variants">
         <KitchenSinkBox description="button" span={4}>
           <Button variant="destructive">destructive</Button>
         </KitchenSinkBox>
@@ -244,7 +250,7 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         <KitchenSinkBox description="" span={4}></KitchenSinkBox>
       </KitchenSinkContainer>
 
-      <KitchenSinkContainer header="Link variant" subHeader="Showcases all link  variants">
+      <KitchenSinkContainer header="Link variant" subHeader="Showcases all link variants">
         <KitchenSinkBox description="button" span={4}>
           <Button variant="link">link</Button>
         </KitchenSinkBox>

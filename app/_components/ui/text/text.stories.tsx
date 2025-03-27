@@ -5,7 +5,7 @@ import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-container'
 import { Text } from './text'
 
 export default {
-  title: 'Design System/Text',
+  title: 'Design System/Text, Typography',
   component: Text,
   argTypes: {
     children: {
