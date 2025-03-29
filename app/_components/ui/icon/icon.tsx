@@ -1,5 +1,4 @@
 import { cn } from '@/app/_components/utils'
-import 'material-symbols'
 
 const variantMap = {
   outline: 'material-symbols-outlined',
