@@ -5,6 +5,7 @@ import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
 import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
 import { User, X } from 'lucide-react'
 import { Badge } from './badge'
+import { TbUserFilled, TbX } from 'react-icons/tb'
 
 export default {
   title: 'Design System/Badge, Tag',
@@ -45,7 +46,7 @@ export default {
   args: {
     children: (
       <>
-        <User fill="currentColor" />
+        <User />
         Label
       </>
     ),
@@ -68,9 +69,9 @@ const KitchenSinkTemplate: StoryFn<typeof Badge> = () => {
       <KitchenSinkContainer header="Variants">
         <KitchenSinkBox description="default" span={8}>
           <Badge variant="default">
-            <User fill="currentColor" />
+            <TbUserFilled />
             Default
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="default w/ action" span={8}>
@@ -82,91 +83,91 @@ const KitchenSinkTemplate: StoryFn<typeof Badge> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="default (disabled)" span={8}>
           <Badge variant="default" disabled>
-            <User fill="currentColor" />
+            <User />
             Default
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="success" span={8}>
           <Badge variant="success">
-            <User fill="currentColor" />
+            <User />
             Success
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="success w/ action" span={8}>
           <Badge variant="success" onClick={() => {}}>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Success
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="success (disabled)" span={8}>
           <Badge variant="success" disabled>
-            <User fill="currentColor" />
+            <User />
             Success
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="warning" span={8}>
           <Badge variant="warning">
-            <User fill="currentColor" />
+            <User />
             Warning
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="warning w/ action" span={8}>
           <Badge variant="warning" onClick={() => {}}>
-            <User fill="currentColor" />
+            <User />
             Warning
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="warning (disabled)" span={8}>
           <Badge variant="warning" disabled>
-            <User fill="currentColor" />
+            <User />
             Warning
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="info" span={8}>
           <Badge variant="info">
-            <User fill="currentColor" />
+            <User />
             Info
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="info w/ action" span={8}>
           <Badge variant="info" onClick={() => {}}>
-            <User fill="currentColor" />
+            <User />
             Info
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="info (disabled)" span={8}>
           <Badge variant="info" disabled>
-            <User fill="currentColor" />
+            <User />
             Info
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="destructive" span={8}>
           <Badge variant="destructive">
-            <User fill="currentColor" />
+            <User />
             Destructive
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="destructive w/ action" span={8}>
           <Badge variant="destructive" onClick={() => {}}>
-            <User fill="currentColor" />
+            <User />
             Destructive
             <X />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="destructive (disabled)" span={8}>
           <Badge variant="destructive" disabled>
-            <User fill="currentColor" />
+            <User />
             Destructive
             <X />
           </Badge>
@@ -176,20 +177,20 @@ const KitchenSinkTemplate: StoryFn<typeof Badge> = () => {
       <KitchenSinkContainer header="Sizes">
         <KitchenSinkBox description="large (24px)" span={8}>
           <Badge variant="default" size="lg">
-            <User fill="currentColor" />
+            <User />
             Large
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="medium (20px)" span={8}>
           <Badge variant="default" size="md">
-            <User fill="currentColor" />
+            <User />
             Medium
           </Badge>
         </KitchenSinkBox>
 
         <KitchenSinkBox description="small (16px)" span={8}>
           <Badge variant="default" size="sm">
-            <User fill="currentColor" />
+            <User />
             Small
           </Badge>
         </KitchenSinkBox>
@@ -198,20 +199,20 @@ const KitchenSinkTemplate: StoryFn<typeof Badge> = () => {
       <KitchenSinkContainer header="Rounded">
         <KitchenSinkBox description="large + rounded" span={8}>
           <Badge variant="default" size="lg" rounded>
-            <User fill="currentColor" />
+            <User />
             Default
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="medium + rounded" span={8}>
           <Badge variant="default" size="md" rounded>
-            <User fill="currentColor" />
+            <User />
             Rounded
           </Badge>
         </KitchenSinkBox>
 
         <KitchenSinkBox description="small + rounded" span={8}>
           <Badge variant="default" size="sm" rounded>
-            <User fill="currentColor" />
+            <User />
             Small
           </Badge>
         </KitchenSinkBox>
@@ -228,7 +229,7 @@ const KitchenSinkTemplate: StoryFn<typeof Badge> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="handle long badges + icon(not done)" span={8}>
           <Badge className="max-w-[240px]">
-            <User fill="currentColor" />
+            <User />
             <p className="line-clamp-1 w-[240px]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quidem molestias suscipit consectetur
               adipisicing elit. Soluta, quidem molestias suscipit

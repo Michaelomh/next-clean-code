@@ -16,7 +16,7 @@
     "db:local": "turso dev --db-file drizzle/dev.db",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_c9db7b28712811f"
+    "chromatic": "npx chromatic"
   },
   "dependencies": {
     "@evyweb/ioctopus": "^1.2.0",

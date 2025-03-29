@@ -1,7 +1,7 @@
 export const KITCHEN_SINK_PARAMS = {
   layout: 'fullscreen',
   options: { bottomPanelHeight: 0 },
-  chromatic: { disableSnapshot: true },
+  chromatic: { disableSnapshot: false },
 }
 
 export const KITCHEN_SINK_DECORATORS = [
