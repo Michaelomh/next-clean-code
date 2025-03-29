@@ -1,8 +1,8 @@
 import { StoryFn, Meta } from '@storybook/react'
 import { fn } from '@storybook/test'
 import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
-import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-box'
-import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-container'
+import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
+import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
 import { User, X } from 'lucide-react'
 import { Badge } from './badge'
 
@@ -11,9 +11,9 @@ export default {
   component: Badge,
   argTypes: {
     children: {
+      control: false,
       description: 'Sets the `Badge` description content.',
       table: { category: 'Content', type: { summary: 'React.ReactNode' } },
-      control: { type: 'text' },
     },
     variant: {
       description: 'Sets the `Badge` variant style.',
@@ -43,7 +43,12 @@ export default {
     },
   },
   args: {
-    children: 'description',
+    children: (
+      <>
+        <User fill="currentColor" />
+        Badge
+      </>
+    ),
     variant: 'default',
     onClick: fn(),
     rounded: false,
@@ -52,12 +57,7 @@ export default {
 } as Meta<typeof Badge>
 
 const ControlTemplate: StoryFn<typeof Badge> = (args) => {
-  return (
-    <div className="w-96">
-      {' '}
-      <Badge {...args}>{args.children}</Badge>
-    </div>
-  )
+  return <Badge {...args}>{args.children}</Badge>
 }
 
 export const Controls = ControlTemplate.bind({})

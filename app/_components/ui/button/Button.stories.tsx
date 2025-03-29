@@ -2,8 +2,8 @@ import { StoryFn, Meta } from '@storybook/react'
 import { fn } from '@storybook/test'
 import { Button } from './button'
 import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
-import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-box'
-import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-container'
+import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
+import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
 import { User } from 'lucide-react'
 
 export default {
@@ -250,7 +250,7 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         <KitchenSinkBox description="" span={4}></KitchenSinkBox>
       </KitchenSinkContainer>
 
-      <KitchenSinkContainer header="Link variant" subHeader="Showcases all link variants">
+      <KitchenSinkContainer header="Link variant (not done yet)" subHeader="Showcases all link variants">
         <KitchenSinkBox description="button" span={4}>
           <Button variant="link">link</Button>
         </KitchenSinkBox>
@@ -347,6 +347,17 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="spinner placement end" span={8}>
           <Button loading loadingText="Please wait" spinnerPlacement="end" />
+        </KitchenSinkBox>
+      </KitchenSinkContainer>
+
+      <KitchenSinkContainer header="Scenarios">
+        <KitchenSinkBox description="handle long buttons (not done)" span={12}>
+          <div className="w-[240px]">
+            <Button>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quidem molestias suscipit consectetur
+              adipisicing elit. Soluta, quidem molestias suscipit
+            </Button>
+          </div>
         </KitchenSinkBox>
       </KitchenSinkContainer>
     </>

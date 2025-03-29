@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react'
 import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
-import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-box'
-import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-container'
+import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
+import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
 import { Text } from './text'
 
 export default {
@@ -74,19 +74,19 @@ const KitchenSinkTemplate: StoryFn<typeof Text> = () => {
   return (
     <>
       <KitchenSinkContainer header="Styles" subHeader="Showcases all text styles.">
-        <KitchenSinkBox description="h1" span={24} containerClassName="min-h-auto">
+        <KitchenSinkBox description="h1" span={24} className="min-h-auto">
           <Text style="h1">The quick brown fox jumps over the lazy dog</Text>
         </KitchenSinkBox>
-        <KitchenSinkBox description="h2" span={24} containerClassName="min-h-auto">
+        <KitchenSinkBox description="h2" span={24} className="min-h-auto">
           <Text style="h2">The quick brown fox jumps over the lazy dog</Text>
         </KitchenSinkBox>
-        <KitchenSinkBox description="h3" span={24} containerClassName="min-h-auto">
+        <KitchenSinkBox description="h3" span={24} className="min-h-auto">
           <Text style="h3">The quick brown fox jumps over the lazy dog</Text>
         </KitchenSinkBox>
-        <KitchenSinkBox description="p1" span={24} containerClassName="min-h-auto">
+        <KitchenSinkBox description="p1" span={24} className="min-h-auto">
           <Text style="p1">The quick brown fox jumps over the lazy dog</Text>
         </KitchenSinkBox>
-        <KitchenSinkBox description="p2" span={24} containerClassName="min-h-auto">
+        <KitchenSinkBox description="p2" span={24} className="min-h-auto">
           <Text style="p2">The quick brown fox jumps over the lazy dog</Text>
         </KitchenSinkBox>
       </KitchenSinkContainer>

@@ -2,8 +2,8 @@ import { StoryFn, Meta } from '@storybook/react'
 import { fn } from '@storybook/test'
 import { Alert } from './alert'
 import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
-import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-box'
-import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-container'
+import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
+import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
 import { AlertCircle, Check, Info, TriangleAlert, User } from 'lucide-react'
 
 export default {

@@ -1,31 +1,17 @@
-import { cn } from '@/app/_components/utils'
+type KitchenSinkContainerType = {
+  header: string
+  subHeader?: string
+  children: React.ReactNode
+}
 
-export const KitchenSinkBox = ({
-  children,
-  description,
-  span,
-  innerClassName,
-  outerClassName,
-  containerClassName,
-}: React.PropsWithChildren<{
-  description: string
-  span: number
-  innerClassName?: string
-  outerClassName?: string
-  containerClassName?: string
-}>) => {
+export const KitchenSinkContainer = ({ header, subHeader, children }: KitchenSinkContainerType) => {
   return (
-    <div
-      className={cn('flex min-h-32 flex-col justify-between rounded-md border-2', containerClassName)}
-      style={{
-        gridColumnStart: `span ${span}`,
-      }}
-    >
-      <div className={cn('flex flex-1 items-center justify-center p-2', outerClassName)}>
-        {/* additional div necessary for responsive purposes */}
-        <div className={innerClassName}>{children}</div>
+    <div className="mb-4">
+      {header !== '' && <p className="mt-6 mb-2">{header}</p>}
+      {subHeader && <p>{subHeader}</p>}
+      <div className="grid auto-cols-auto grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2">
+        {children}
       </div>
-      <p className="m-0 text-center">{description}</p>
     </div>
   )
 }

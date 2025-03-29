@@ -3,6 +3,9 @@ import { Roboto_Flex, Roboto_Mono } from 'next/font/google'
 import './globals.css'
 import { TailwindIndicator } from './_components/shared/tailwind-indicator'
 import { ThemeProvider } from './_components/shared/theme-provider'
+import { Toaster } from './_components/ui'
+// icon library
+import 'material-symbols'
 
 const robotoFlex = Roboto_Flex({
   variable: '--font-roboto-flex',
@@ -32,6 +35,7 @@ export default function RootLayout({
           <p className="font-mono">Roboto Mono</p>
           {children}
           <TailwindIndicator />
+          <Toaster closeButton position="top-right" richColors />
         </ThemeProvider>
       </body>
     </html>
