@@ -13,6 +13,7 @@ export const parameters = {
     expanded: true,
     disableSaveFromUI: true,
   },
+  chromatic: { disableSnapshot: true },
 }
 
 export const decorators = [

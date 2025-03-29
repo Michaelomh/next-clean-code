@@ -46,7 +46,7 @@ export default {
     children: (
       <>
         <User fill="currentColor" />
-        Badge
+        Label
       </>
     ),
     variant: 'default',
