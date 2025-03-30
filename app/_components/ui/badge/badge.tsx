@@ -1,10 +1,9 @@
-import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/app/_components/utils'
 
 const badgeVariants = cva(
-  'inline-flex items-center cursor-default justify-center rounded-sm border text-xs font-medium w-fit whitespace-nowrap shrink-0 gap-1 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] [&>svg]:text-current transition-[color,box-shadow] overflow-hidden',
+  'inline-flex items-center cursor-default justify-center rounded-sm border text-xs font-medium w-full whitespace-nowrap shrink-0 gap-1 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] [&>svg]:text-current transition-[color,box-shadow]',
   {
     variants: {
       variant: {
@@ -77,8 +76,8 @@ function Badge({
     <div
       data-slot="badge"
       className={cn(badgeVariants({ variant, rounded, size, disabled, hasAction: !!onClick }), className)}
-      {...props}
       onClick={onClick}
+      {...props}
     />
   )
 }

@@ -1,9 +1,18 @@
 import { StoryFn, Meta } from '@storybook/react'
+import {
+  TbAlertCircle,
+  TbAlertTriangle,
+  TbCheck,
+  TbExternalLink,
+  TbInfoCircle,
+  TbLoader2,
+  TbUser,
+} from 'react-icons/tb'
+import { toast } from 'sonner'
+
 import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
 import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
 import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
-import { Check, CircleAlert, ExternalLink, Info, LoaderCircle, TriangleAlert, User } from 'lucide-react'
-import { toast } from 'sonner'
 import { Text, Button } from '..'
 import { Toaster } from './sonner'
 
@@ -16,12 +25,13 @@ const KitchenSinkTemplate: StoryFn<typeof toast> = () => {
   return (
     <>
       <Text style="h1">Sonner</Text>
-      <span>
-        See all documentation for Sonner{' '}
-        <a href="https://sonner.emilkowal.ski/getting-started" className="hover:underline" target="_blank">
-          here <ExternalLink className="mb-1 inline" size={16} />
-        </a>
-      </span>
+      <a
+        href="https://sonner.emilkowal.ski/getting-started"
+        className="border-b-stone-700 hover:border-b"
+        target="_blank"
+      >
+        Sonner Documentation <TbExternalLink className="mb-1 inline" />
+      </a>
 
       <KitchenSinkContainer header="Variants">
         <KitchenSinkBox description="" className="" span={5}>
@@ -123,7 +133,7 @@ const KitchenSinkTemplate: StoryFn<typeof toast> = () => {
           <Button
             onClick={() => {
               toast('Toast with Icon', {
-                icon: <User />,
+                icon: <TbUser />,
               })
             }}
           >
@@ -249,46 +259,46 @@ const KitchenSinkTemplate: StoryFn<typeof toast> = () => {
 
       <Toaster position="top-left" richColors />
       <div className="fixed top-0 left-0">
-        <p className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
+        <Text className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
           top-left: Rich colors toaster
-        </p>
+        </Text>
       </div>
 
       <Toaster
         position="top-center"
         icons={{
-          success: <Check />,
-          info: <Info />,
-          warning: <TriangleAlert />,
-          error: <CircleAlert />,
-          loading: <LoaderCircle className="animate-spin" />,
+          success: <TbCheck size={24} />,
+          info: <TbInfoCircle size={24} />,
+          warning: <TbAlertTriangle size={24} />,
+          error: <TbAlertCircle size={24} />,
+          loading: <TbLoader2 className="animate-spin" size={24} />,
         }}
       />
       <div className="fixed top-0 left-[calc(50%-112px)]">
-        <p className="sticky m-4 w-56 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
+        <Text className="sticky m-4 w-56 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
           top-center: Custom Icons for different variants
-        </p>
+        </Text>
       </div>
 
       <Toaster position="top-right" closeButton />
       <div className="fixed top-0 right-4">
-        <p className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
+        <Text className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
           top-right: always has close button
-        </p>
+        </Text>
       </div>
 
       <Toaster position="bottom-left" expand />
       <div className="fixed bottom-0 left-0">
-        <p className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
+        <Text className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
           bottom-left: show all toast expanded
-        </p>
+        </Text>
       </div>
 
       <Toaster position="bottom-center" toastOptions={{ duration: 1000 }} />
       <div className="fixed bottom-0 left-[calc(50%-112px)]">
-        <p className="sticky m-4 w-56 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
+        <Text className="sticky m-4 w-56 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
           bottom-center: All toast duration at 1s
-        </p>
+        </Text>
       </div>
 
       <Toaster
@@ -300,9 +310,9 @@ const KitchenSinkTemplate: StoryFn<typeof toast> = () => {
         }}
       />
       <div className="fixed right-0 bottom-0">
-        <p className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
+        <Text className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
           bottom-right: custom style toasts (always green)
-        </p>
+        </Text>
       </div>
     </>
   )

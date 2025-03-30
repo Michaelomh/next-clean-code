@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Checkbox } from './_components/ui/checkbox/checkbox'
 import { toggleTodo } from './action'
-import { Loader2 } from 'lucide-react'
+import { TbLoader2 } from 'react-icons/tb'
 
 type TodoItemProps = {
   todo: {
@@ -27,7 +27,7 @@ export function TodoItem({ todo }: TodoItemProps) {
   return (
     <div className="flex items-center gap-2">
       {loading ? (
-        <Loader2 color="white" size={16} className="animate-spin" />
+        <TbLoader2 color="white" size={16} className="animate-spin" />
       ) : (
         <Checkbox id={`todo-${todo.id}`} checked={todo.completedAt !== null} onCheckedChange={onCheckboxChange} />
       )}

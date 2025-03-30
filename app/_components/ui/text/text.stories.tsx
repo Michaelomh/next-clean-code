@@ -21,7 +21,7 @@ export default {
     },
     className: {
       control: 'text',
-      description: 'Sets additional styles for `Text`. className has the highest specificity.',
+      description: 'Sets additional styles for `Text`. ClassName has the highest specificity.',
       table: { category: 'Display', type: { summary: 'string' } },
     },
     color: {

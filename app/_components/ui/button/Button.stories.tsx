@@ -4,7 +4,7 @@ import { Button } from './button'
 import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
 import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
 import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
-import { User } from 'lucide-react'
+import { TbUser } from 'react-icons/tb'
 
 export default {
   title: 'Design System/Button, IconButton',
@@ -116,13 +116,13 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="button + icon" span={4}>
           <Button variant="default">
-            <User />
+            <TbUser />
             default
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="icon" span={4}>
           <Button variant="default" size="icon-md">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="loading" span={4}>
@@ -144,13 +144,13 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="button + icon" span={4}>
           <Button variant="secondary">
-            <User />
+            <TbUser />
             secondary
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="icon" span={4}>
           <Button variant="secondary" size="icon-md">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="loading" span={4}>
@@ -172,13 +172,13 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="button + icon" span={4}>
           <Button variant="outline">
-            <User />
+            <TbUser />
             outline
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="icon" span={4}>
           <Button variant="outline" size="icon-md">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="loading" span={4}>
@@ -200,13 +200,13 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="button + icon" span={4}>
           <Button variant="ghost">
-            <User />
+            <TbUser />
             ghost
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="icon" span={4}>
           <Button variant="ghost" size="icon-md">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="loading" span={4}>
@@ -228,13 +228,13 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="button + icon" span={4}>
           <Button variant="destructive">
-            <User />
+            <TbUser />
             destructive
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="icon" span={4}>
           <Button variant="destructive" size="icon-md">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="loading" span={4}>
@@ -250,19 +250,19 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         <KitchenSinkBox description="" span={4}></KitchenSinkBox>
       </KitchenSinkContainer>
 
-      <KitchenSinkContainer header="Link variant (not done yet)" subHeader="Showcases all link variants">
-        <KitchenSinkBox description="button" span={4}>
+      <KitchenSinkContainer header="Link variant" subHeader="Showcases all link variants">
+        <KitchenSinkBox description="link button (md)" span={4}>
           <Button variant="link">link</Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="button + icon" span={4}>
           <Button variant="link">
-            <User />
+            <TbUser />
             link
           </Button>
         </KitchenSinkBox>
-        <KitchenSinkBox description="icon" span={4}>
+        <KitchenSinkBox description="icon (md)" span={4}>
           <Button variant="link" size="icon-md">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="loading" span={4}>
@@ -276,6 +276,38 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="" span={4}></KitchenSinkBox>
+        <KitchenSinkBox description="link button (sm)" span={4}>
+          <Button variant="link" size="sm">
+            link
+          </Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="button + icon" span={4}>
+          <Button variant="link" size="sm">
+            <TbUser />
+            link
+          </Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="icon (sm)" span={4}>
+          <Button variant="link" size="icon-sm">
+            <TbUser />
+          </Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="link button (lg)" span={4}>
+          <Button variant="link" size="lg">
+            link
+          </Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="button + icon" span={4}>
+          <Button variant="link" size="lg">
+            <TbUser />
+            link
+          </Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="icon (lg)" span={4}>
+          <Button variant="link" size="icon-lg">
+            <TbUser />
+          </Button>
+        </KitchenSinkBox>
       </KitchenSinkContainer>
 
       <KitchenSinkContainer header="Sizes" subHeader="Showcases all button sizes in default variant">
@@ -290,17 +322,17 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="icon-sm" span={3}>
           <Button size="icon-sm">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="icon-md" span={3}>
           <Button size="icon-md">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="icon-lg" span={3}>
           <Button size="icon-lg">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
       </KitchenSinkContainer>
@@ -323,17 +355,17 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="icon-sm" span={8} innerClassName="w-full">
           <Button fullWidth size="icon-sm">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="icon-md" span={8} innerClassName="w-full">
           <Button fullWidth size="icon-md">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
         <KitchenSinkBox description="icon-lg" span={8} innerClassName="w-full">
           <Button fullWidth size="icon-lg">
-            <User />
+            <TbUser />
           </Button>
         </KitchenSinkBox>
       </KitchenSinkContainer>
@@ -347,17 +379,6 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="spinner placement end" span={8}>
           <Button loading loadingText="Please wait" spinnerPlacement="end" />
-        </KitchenSinkBox>
-      </KitchenSinkContainer>
-
-      <KitchenSinkContainer header="Scenarios">
-        <KitchenSinkBox description="handle long buttons (not done)" span={12}>
-          <div className="w-[240px]">
-            <Button>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quidem molestias suscipit consectetur
-              adipisicing elit. Soluta, quidem molestias suscipit
-            </Button>
-          </div>
         </KitchenSinkBox>
       </KitchenSinkContainer>
     </>

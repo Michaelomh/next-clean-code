@@ -1,7 +1,11 @@
+'use client'
+
 import { cva, type VariantProps } from 'class-variance-authority'
+import { useEffect, useRef, useState } from 'react'
+import { TbX } from 'react-icons/tb'
 
 import { cn } from '@/app/_components/utils'
-import { X } from 'lucide-react'
+import { Text } from '..'
 
 const alertVariants = cva(
   'relative w-full rounded-lg border px-4 py-3 text-sm grid  has-[>svg]:gap-x-3 gap-y-0.5 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current',
@@ -69,6 +73,15 @@ function Alert({
     closeButton?: boolean
     onClose?: () => void
   }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [isAlertOverflow, setAlertOverflow] = useState(false)
+
+  useEffect(() => {
+    if (ref.current && ref.current.clientHeight < ref.current.scrollHeight) {
+      setAlertOverflow(true)
+    }
+  }, [ref])
+
   return (
     <div
       data-slot="alert"
@@ -78,12 +91,14 @@ function Alert({
     >
       {icon && icon}
       <div>
-        <div
+        <Text
           data-slot="alert-title"
           className="col-start-2 line-clamp-1 min-h-4 cursor-default font-medium tracking-tight"
+          title={isAlertOverflow ? title : undefined}
+          ref={ref}
         >
           {title}
-        </div>
+        </Text>
         {props.children && (
           <div
             data-slot="alert-description"
@@ -93,7 +108,7 @@ function Alert({
           </div>
         )}
       </div>
-      {closeButton && onClose && <X className="flex !h-full cursor-pointer" onClick={onClose} />}
+      {closeButton && onClose && <TbX className="flex !h-full cursor-pointer" onClick={onClose} />}
     </div>
   )
 }

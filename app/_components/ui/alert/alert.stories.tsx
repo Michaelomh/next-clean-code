@@ -4,7 +4,7 @@ import { Alert } from './alert'
 import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
 import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
 import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
-import { AlertCircle, Check, Info, TriangleAlert, User } from 'lucide-react'
+import { TbUser, TbCheck, TbAlertTriangle, TbInfoCircle, TbAlertCircle } from 'react-icons/tb'
 
 export default {
   title: 'Design System/Alert, Banner',
@@ -51,7 +51,7 @@ export default {
     children: 'description',
     variant: 'default',
     closeButton: true,
-    icon: <User />,
+    icon: <TbUser />,
     onClose: fn(),
   },
 } as Meta<typeof Alert>
@@ -80,10 +80,10 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           </Alert>
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon" span={12} outerClassName="block">
-          <Alert variant="default" title="Default Alert with Icon" icon={<User />} />
+          <Alert variant="default" title="Default Alert with Icon" icon={<TbUser />} />
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon + description" span={12} outerClassName="block">
-          <Alert variant="default" title="Default Alert with Icon" icon={<User />}>
+          <Alert variant="default" title="Default Alert with Icon" icon={<TbUser />}>
             Description
           </Alert>
         </KitchenSinkBox>
@@ -96,10 +96,10 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           </Alert>
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + closeButton" span={12} outerClassName="block">
-          <Alert variant="default" title="Default Alert with Icon" icon={<User />} closeButton onClose={fn()} />
+          <Alert variant="default" title="Default Alert with Icon" icon={<TbUser />} closeButton onClose={fn()} />
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + closeButton + description" span={12} outerClassName="block">
-          <Alert variant="default" title="Default Alert with Icon" icon={<User />} closeButton onClose={fn()}>
+          <Alert variant="default" title="Default Alert with Icon" icon={<TbUser />} closeButton onClose={fn()}>
             Description
           </Alert>
         </KitchenSinkBox>
@@ -115,10 +115,10 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           </Alert>
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon" span={12} outerClassName="block">
-          <Alert variant="success" title="Success Alert with Icon" icon={<Check />} />
+          <Alert variant="success" title="Success Alert with Icon" icon={<TbCheck />} />
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon + description" span={12} outerClassName="block">
-          <Alert variant="success" title="Success Alert with Icon" icon={<Check />}>
+          <Alert variant="success" title="Success Alert with Icon" icon={<TbCheck />}>
             Description
           </Alert>
         </KitchenSinkBox>
@@ -131,10 +131,10 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           </Alert>
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + closeButton" span={12} outerClassName="block">
-          <Alert variant="success" title="Success Alert with Icon" icon={<Check />} closeButton onClose={fn()} />
+          <Alert variant="success" title="Success Alert with Icon" icon={<TbCheck />} closeButton onClose={fn()} />
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + closeButton + description" span={12} outerClassName="block">
-          <Alert variant="success" title="Success Alert with Icon" icon={<Check />} closeButton onClose={fn()}>
+          <Alert variant="success" title="Success Alert with Icon" icon={<TbCheck />} closeButton onClose={fn()}>
             Description
           </Alert>
         </KitchenSinkBox>
@@ -150,10 +150,10 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           </Alert>
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon" span={12} outerClassName="block">
-          <Alert variant="warning" title="Warning Alert with Icon" icon={<TriangleAlert />} />
+          <Alert variant="warning" title="Warning Alert with Icon" icon={<TbAlertTriangle />} />
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon + description" span={12} outerClassName="block">
-          <Alert variant="warning" title="Warning Alert with Icon" icon={<TriangleAlert />}>
+          <Alert variant="warning" title="Warning Alert with Icon" icon={<TbAlertTriangle />}>
             Description
           </Alert>
         </KitchenSinkBox>
@@ -169,13 +169,19 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           <Alert
             variant="warning"
             title="Warning Alert with Icon"
-            icon={<TriangleAlert />}
+            icon={<TbAlertTriangle />}
             closeButton
             onClose={fn()}
           />
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + closeButton + description" span={12} outerClassName="block">
-          <Alert variant="warning" title="Warning Alert with Icon" icon={<TriangleAlert />} closeButton onClose={fn()}>
+          <Alert
+            variant="warning"
+            title="Warning Alert with Icon"
+            icon={<TbAlertTriangle />}
+            closeButton
+            onClose={fn()}
+          >
             Description
           </Alert>
         </KitchenSinkBox>
@@ -191,10 +197,10 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           </Alert>
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon" span={12} outerClassName="block">
-          <Alert variant="info" title="Info Alert with Icon" icon={<Info />} />
+          <Alert variant="info" title="Info Alert with Icon" icon={<TbInfoCircle />} />
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon + description" span={12} outerClassName="block">
-          <Alert variant="info" title="Info Alert with Icon" icon={<Info />}>
+          <Alert variant="info" title="Info Alert with Icon" icon={<TbInfoCircle />}>
             Description
           </Alert>
         </KitchenSinkBox>
@@ -207,10 +213,10 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           </Alert>
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + closeButton" span={12} outerClassName="block">
-          <Alert variant="info" title="Info Alert with Icon" icon={<Info />} closeButton onClose={fn()} />
+          <Alert variant="info" title="Info Alert with Icon" icon={<TbInfoCircle />} closeButton onClose={fn()} />
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + closeButton + description" span={12} outerClassName="block">
-          <Alert variant="info" title="Info Alert with Icon" icon={<Info />} closeButton onClose={fn()}>
+          <Alert variant="info" title="Info Alert with Icon" icon={<TbInfoCircle />} closeButton onClose={fn()}>
             Description
           </Alert>
         </KitchenSinkBox>
@@ -226,10 +232,10 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           </Alert>
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon" span={12} outerClassName="block">
-          <Alert variant="destructive" title="Destructive Alert with Icon" icon={<AlertCircle />} />
+          <Alert variant="destructive" title="Destructive Alert with Icon" icon={<TbAlertCircle />} />
         </KitchenSinkBox>
         <KitchenSinkBox description="alert + icon + description" span={12} outerClassName="block">
-          <Alert variant="destructive" title="Destructive Alert with Icon" icon={<AlertCircle />}>
+          <Alert variant="destructive" title="Destructive Alert with Icon" icon={<TbAlertCircle />}>
             Description
           </Alert>
         </KitchenSinkBox>
@@ -245,7 +251,7 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           <Alert
             variant="destructive"
             title="Destructive Alert with Icon"
-            icon={<AlertCircle />}
+            icon={<TbAlertCircle />}
             closeButton
             onClose={fn()}
           />
@@ -254,7 +260,7 @@ const KitchenSinkTemplate: StoryFn<typeof Alert> = () => {
           <Alert
             variant="destructive"
             title="Destructive Alert with Icon"
-            icon={<AlertCircle />}
+            icon={<TbAlertCircle />}
             closeButton
             onClose={fn()}
           >

@@ -24,10 +24,10 @@ const textVariants = cva('', {
       '3xl': 'text-3xl',
     },
     weight: {
-      light: 300,
-      regular: 400,
-      medium: 500,
-      bold: 700,
+      light: 'font-light',
+      regular: 'font-regular',
+      medium: 'font-medium',
+      bold: 'font-bold',
     },
     noOfLines: {
       1: 'line-clamp-1',
@@ -38,8 +38,8 @@ const textVariants = cva('', {
       6: 'line-clamp-6',
     },
     italics: {
-      true: 'italics',
-      false: 'not-italics',
+      true: 'italic',
+      false: 'not-italic',
     },
   },
 })
@@ -65,17 +65,12 @@ function Text({
     color?: string
     italics?: boolean
   }) {
-  const colorClass = `text-${color}`
+  const colorClass = `${color}`
 
   return (
     <p
       data-slot="text"
-      className={cn(
-        textVariants({ style }),
-        textVariants({ font, size, weight, noOfLines, italics }),
-        color && colorClass,
-        className,
-      )}
+      className={cn(textVariants({ style, font, size, weight, noOfLines, italics }), color && colorClass, className)}
       {...props}
     >
       {children}

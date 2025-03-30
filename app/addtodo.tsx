@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { PlusCircle } from 'lucide-react'
 import { Input } from './_components/ui/input/input'
 import { Button } from './_components/ui/button/button'
 import { createTodo } from './action'
+import { TbCirclePlus } from 'react-icons/tb'
 
 export function AddTodo() {
   const [text, setText] = useState('')
@@ -35,7 +35,7 @@ export function AddTodo() {
         className="flex-1"
       />
       <Button type="submit" disabled={!text.trim()} loading={isLoading}>
-        <PlusCircle className="mr-2 h-4 w-4" />
+        <TbCirclePlus className="mr-2 h-4 w-4" />
         Add
       </Button>
     </form>

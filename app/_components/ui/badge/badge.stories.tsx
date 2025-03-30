@@ -3,8 +3,9 @@ import { fn } from '@storybook/test'
 import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
 import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
 import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
-import { User, X } from 'lucide-react'
 import { Badge } from './badge'
+import { Text } from '..'
+import { TbUserFilled, TbX } from 'react-icons/tb'
 
 export default {
   title: 'Design System/Badge, Tag',
@@ -45,8 +46,8 @@ export default {
   args: {
     children: (
       <>
-        <User fill="currentColor" />
-        Badge
+        <TbUserFilled />
+        Label
       </>
     ),
     variant: 'default',
@@ -68,107 +69,107 @@ const KitchenSinkTemplate: StoryFn<typeof Badge> = () => {
       <KitchenSinkContainer header="Variants">
         <KitchenSinkBox description="default" span={8}>
           <Badge variant="default">
-            <User fill="currentColor" />
+            <TbUserFilled />
             Default
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="default w/ action" span={8}>
           <Badge variant="default" onClick={() => {}}>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Default
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="default (disabled)" span={8}>
           <Badge variant="default" disabled>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Default
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="success" span={8}>
           <Badge variant="success">
-            <User fill="currentColor" />
+            <TbUserFilled />
             Success
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="success w/ action" span={8}>
           <Badge variant="success" onClick={() => {}}>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Success
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="success (disabled)" span={8}>
           <Badge variant="success" disabled>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Success
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="warning" span={8}>
           <Badge variant="warning">
-            <User fill="currentColor" />
+            <TbUserFilled />
             Warning
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="warning w/ action" span={8}>
           <Badge variant="warning" onClick={() => {}}>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Warning
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="warning (disabled)" span={8}>
           <Badge variant="warning" disabled>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Warning
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="info" span={8}>
           <Badge variant="info">
-            <User fill="currentColor" />
+            <TbUserFilled />
             Info
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="info w/ action" span={8}>
           <Badge variant="info" onClick={() => {}}>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Info
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="info (disabled)" span={8}>
           <Badge variant="info" disabled>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Info
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="destructive" span={8}>
           <Badge variant="destructive">
-            <User fill="currentColor" />
+            <TbUserFilled />
             Destructive
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="destructive w/ action" span={8}>
           <Badge variant="destructive" onClick={() => {}}>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Destructive
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="destructive (disabled)" span={8}>
           <Badge variant="destructive" disabled>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Destructive
-            <X />
+            <TbX />
           </Badge>
         </KitchenSinkBox>
       </KitchenSinkContainer>
@@ -176,20 +177,20 @@ const KitchenSinkTemplate: StoryFn<typeof Badge> = () => {
       <KitchenSinkContainer header="Sizes">
         <KitchenSinkBox description="large (24px)" span={8}>
           <Badge variant="default" size="lg">
-            <User fill="currentColor" />
+            <TbUserFilled />
             Large
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="medium (20px)" span={8}>
           <Badge variant="default" size="md">
-            <User fill="currentColor" />
+            <TbUserFilled />
             Medium
           </Badge>
         </KitchenSinkBox>
 
         <KitchenSinkBox description="small (16px)" span={8}>
           <Badge variant="default" size="sm">
-            <User fill="currentColor" />
+            <TbUserFilled />
             Small
           </Badge>
         </KitchenSinkBox>
@@ -198,42 +199,46 @@ const KitchenSinkTemplate: StoryFn<typeof Badge> = () => {
       <KitchenSinkContainer header="Rounded">
         <KitchenSinkBox description="large + rounded" span={8}>
           <Badge variant="default" size="lg" rounded>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Default
           </Badge>
         </KitchenSinkBox>
         <KitchenSinkBox description="medium + rounded" span={8}>
           <Badge variant="default" size="md" rounded>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Rounded
           </Badge>
         </KitchenSinkBox>
 
         <KitchenSinkBox description="small + rounded" span={8}>
           <Badge variant="default" size="sm" rounded>
-            <User fill="currentColor" />
+            <TbUserFilled />
             Small
           </Badge>
         </KitchenSinkBox>
       </KitchenSinkContainer>
 
       <KitchenSinkContainer header="Scenarios">
-        <KitchenSinkBox description="handle long badges (not done)" span={8}>
-          <Badge className="max-w-[240px]">
-            <p className="line-clamp-1 w-[240px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quidem molestias suscipit consectetur
-              adipisicing elit. Soluta, quidem molestias suscipit
-            </p>
-          </Badge>
+        <KitchenSinkBox description="handle long badges" span={8}>
+          <div className="w-[200px]">
+            <Badge>
+              <Text className="w-full overflow-hidden text-ellipsis">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quidem molestias suscipit consectetur
+                adipisicing elit. Soluta, quidem molestias suscipit
+              </Text>
+            </Badge>
+          </div>
         </KitchenSinkBox>
-        <KitchenSinkBox description="handle long badges + icon(not done)" span={8}>
-          <Badge className="max-w-[240px]">
-            <User fill="currentColor" />
-            <p className="line-clamp-1 w-[240px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quidem molestias suscipit consectetur
-              adipisicing elit. Soluta, quidem molestias suscipit
-            </p>
-          </Badge>
+        <KitchenSinkBox description="handle long badges + icon" span={8}>
+          <div className="w-[200px]">
+            <Badge>
+              <TbUserFilled />
+              <Text className="w-full overflow-hidden text-ellipsis">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, quidem molestias suscipit consectetur
+                adipisicing elit. Soluta, quidem molestias suscipit
+              </Text>
+            </Badge>
+          </div>
         </KitchenSinkBox>
       </KitchenSinkContainer>
     </>

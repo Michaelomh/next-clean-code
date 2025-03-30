@@ -1,4 +1,5 @@
 import { cn } from '@/app/_components/utils'
+import { Text } from '@/app/_components/ui'
 
 export const KitchenSinkBox = ({
   children,
@@ -16,7 +17,7 @@ export const KitchenSinkBox = ({
 }>) => {
   return (
     <div
-      className={cn('flex min-h-32 flex-col justify-between rounded-md border-2', className)}
+      className={cn('flex min-h-32 flex-col justify-between rounded-md border', className)}
       style={{
         gridColumnStart: `span ${span}`,
       }}
@@ -25,7 +26,9 @@ export const KitchenSinkBox = ({
         {/* additional div necessary for responsive purposes */}
         <div className={innerClassName}>{children}</div>
       </div>
-      <p className="m-0 text-center">{description}</p>
+      <Text style="p2" className="m-0 text-center">
+        {description}
+      </Text>
     </div>
   )
 }
