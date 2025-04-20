@@ -1,10 +1,7 @@
 @import 'tailwindcss';
-
-@plugin "tailwindcss-animate";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
-
-@config "../tailwind.config.ts";
 
 /* overrides default theme variables */
 @theme {
@@ -170,5 +167,20 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Hide arrows from number inputs */
+@layer base {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+
+  textarea {
+    resize: initial;
   }
 }

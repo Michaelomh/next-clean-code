@@ -10,11 +10,15 @@ import {
 } from 'react-icons/tb'
 import { toast } from 'sonner'
 
-import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
-import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
-import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
-import { Text, Button } from '..'
-import { Toaster } from './sonner'
+import {
+  FloatingText,
+  KITCHEN_SINK_DECORATORS,
+  KITCHEN_SINK_PARAMS,
+  KitchenSinkBox,
+  KitchenSinkContainer,
+} from '@/utils/storybook'
+
+import { Text, Button, Toaster } from '..'
 
 export default {
   title: 'Design System/Sonner, Toast',
@@ -258,11 +262,7 @@ const KitchenSinkTemplate: StoryFn<typeof toast> = () => {
       </KitchenSinkContainer>
 
       <Toaster position="top-left" richColors />
-      <div className="fixed top-0 left-0">
-        <Text className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
-          top-left: Rich colors toaster
-        </Text>
-      </div>
+      <FloatingText text="top-left: Rich colors toaster" position="top-left" />
 
       <Toaster
         position="top-center"
@@ -274,32 +274,16 @@ const KitchenSinkTemplate: StoryFn<typeof toast> = () => {
           loading: <TbLoader2 className="animate-spin" size={24} />,
         }}
       />
-      <div className="fixed top-0 left-[calc(50%-112px)]">
-        <Text className="sticky m-4 w-56 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
-          top-center: Custom Icons for different variants
-        </Text>
-      </div>
+      <FloatingText text="top-center: Custom Icons for different variants" position="top-center" className="w-56" />
 
       <Toaster position="top-right" closeButton />
-      <div className="fixed top-0 right-4">
-        <Text className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
-          top-right: always has close button
-        </Text>
-      </div>
+      <FloatingText text="top-right: always has close button" position="top-right" outerClassName="right-9" />
 
       <Toaster position="bottom-left" expand />
-      <div className="fixed bottom-0 left-0">
-        <Text className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
-          bottom-left: show all toast expanded
-        </Text>
-      </div>
+      <FloatingText text="bottom-left: show all toast expanded" position="bottom-left" />
 
       <Toaster position="bottom-center" toastOptions={{ duration: 1000 }} />
-      <div className="fixed bottom-0 left-[calc(50%-112px)]">
-        <Text className="sticky m-4 w-56 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
-          bottom-center: All toast duration at 1s
-        </Text>
-      </div>
+      <FloatingText text="bottom-center: All toast duration at 1s" position="bottom-center" className="w-56" />
 
       <Toaster
         position="bottom-right"
@@ -309,11 +293,7 @@ const KitchenSinkTemplate: StoryFn<typeof toast> = () => {
           },
         }}
       />
-      <div className="fixed right-0 bottom-0">
-        <Text className="sticky m-4 w-48 rounded-md bg-stone-200/30 p-2 text-stone-800 dark:text-stone-300">
-          bottom-right: custom style toasts (always green)
-        </Text>
-      </div>
+      <FloatingText text="bottom-right: custom style toasts (always green)" position="bottom-right" />
     </>
   )
 }

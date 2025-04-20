@@ -1,14 +1,14 @@
 import { StoryFn, Meta } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
-import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
-import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
-import { Badge } from './badge'
-import { Text } from '..'
 import { TbUserFilled, TbX } from 'react-icons/tb'
 
+import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS, KitchenSinkBox, KitchenSinkContainer } from '@/utils/storybook'
+
+import { Badge } from './badge'
+import { Text } from '..'
+
 export default {
-  title: 'Design System/Badge, Tag',
+  title: 'Design System/Badge, Tag, Chip',
   component: Badge,
   argTypes: {
     children: {
@@ -239,6 +239,14 @@ const KitchenSinkTemplate: StoryFn<typeof Badge> = () => {
               </Text>
             </Badge>
           </div>
+        </KitchenSinkBox>
+
+        <KitchenSinkBox description="with image" span={8}>
+          <p>see https://www.shadcnui-blocks.com/components/badge</p>
+        </KitchenSinkBox>
+
+        <KitchenSinkBox description="status badges" span={8}>
+          <p>see https://www.shadcnui-blocks.com/components/badge</p>
         </KitchenSinkBox>
       </KitchenSinkContainer>
     </>

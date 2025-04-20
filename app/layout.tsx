@@ -3,7 +3,8 @@ import { Roboto_Flex, Roboto_Mono } from 'next/font/google'
 import './globals.css'
 import { TailwindIndicator } from './_components/shared/tailwind-indicator'
 import { ThemeProvider } from './_components/shared/theme-provider'
-import { Toaster, Text } from './_components/ui'
+import { Toaster } from './_components/ui'
+import { ColorModeToggle } from './_components/shared/color-mode-toggle'
 
 const robotoFlex = Roboto_Flex({
   variable: '--font-roboto-flex',
@@ -29,12 +30,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${robotoFlex.variable} ${robotoMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Text font="sans" className="tracking-wide text-red-500">
-            Roboto Flex
-          </Text>
-          <Text font="mono">Roboto Mono</Text>
           {children}
           <TailwindIndicator />
+          <ColorModeToggle className="absolute top-1 right-1" />
           <Toaster closeButton position="top-right" richColors />
         </ThemeProvider>
       </body>

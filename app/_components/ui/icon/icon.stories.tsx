@@ -1,10 +1,15 @@
 import { StoryFn, Meta } from '@storybook/react'
-import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
-import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
-import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
 import { fn } from '@storybook/test'
-import { TbExternalLink, TbUser } from 'react-icons/tb'
+import { TbUser } from 'react-icons/tb'
 import { FaUser } from 'react-icons/fa'
+
+import {
+  FloatingLink,
+  KITCHEN_SINK_DECORATORS,
+  KITCHEN_SINK_PARAMS,
+  KitchenSinkBox,
+  KitchenSinkContainer,
+} from '@/utils/storybook'
 
 export default {
   title: 'Design System/Iconography',
@@ -40,13 +45,12 @@ export default {
 const ControlTemplate: StoryFn<typeof TbUser> = (args) => {
   return (
     <>
-      <a
-        href="https://react-icons.github.io/react-icons/"
-        className="absolute top-1 left-1 border-b-stone-700 text-center hover:border-b"
-        target="_blank"
-      >
-        Full icon list here <TbExternalLink className="mb-1 inline" />
-      </a>
+      <FloatingLink
+        link="https://react-icons.github.io/react-icons/"
+        position="top-left"
+        text="Full icon list here"
+        isExternal
+      />
       <FaUser {...args} />
     </>
   )
@@ -57,13 +61,12 @@ export const Controls = ControlTemplate.bind({})
 const KitchenSinkTemplate: StoryFn<typeof TbUser> = () => {
   return (
     <>
-      <a
-        href="https://react-icons.github.io/react-icons/"
-        className="absolute top-1 left-1 border-b-stone-700 text-center hover:border-b"
-        target="_blank"
-      >
-        Full icon list here <TbExternalLink className="mb-1 inline" />
-      </a>
+      <FloatingLink
+        link="https://react-icons.github.io/react-icons/"
+        position="top-left"
+        text="Full icon list here"
+        isExternal
+      />
 
       <KitchenSinkContainer header="Color" subHeader="To add color, you should be using className">
         <KitchenSinkBox description="currentColor (default)" span={4}>

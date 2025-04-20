@@ -12,6 +12,7 @@ export const parameters = {
   controls: {
     expanded: true,
     disableSaveFromUI: true,
+    sort: 'alpha',
   },
 }
 

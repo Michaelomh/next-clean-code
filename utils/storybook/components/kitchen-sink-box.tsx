@@ -26,7 +26,7 @@ export const KitchenSinkBox = ({
         {/* additional div necessary for responsive purposes */}
         <div className={innerClassName}>{children}</div>
       </div>
-      <Text style="p2" className="m-0 text-center">
+      <Text style="p2" className="py-1 text-center">
         {description}
       </Text>
     </div>

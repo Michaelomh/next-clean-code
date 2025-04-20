@@ -5,7 +5,7 @@ import { cn } from '@/app/_components/utils'
 import { TbLoader2 } from 'react-icons/tb'
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] cursor-pointer [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive disabled:opacity-50 disabled:cursor-not-allowed ",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] cursor-pointer [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive disabled:opacity-50 disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
@@ -16,6 +16,7 @@ const buttonVariants = cva(
         destructive:
           'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40',
         link: 'font-regular text-blue-400 border-b border-b-transparent hover:border-b-blue-400 rounded-none',
+        unstyled: 'font-regular bg-transparent rounded-none',
       },
       size: {
         md: 'h-9 px-4 py-2 has-[>svg]:px-3',
@@ -36,12 +37,12 @@ const buttonVariants = cva(
     },
     compoundVariants: [
       {
-        variant: 'link',
+        variant: ['link', 'unstyled'],
         size: ['sm', 'md', 'lg'],
         className: 'h-6 px-0.5 py-0.5 has-[>svg]:px-0.5',
       },
       {
-        variant: 'link',
+        variant: ['link', 'unstyled'],
         size: ['icon-sm', 'icon-md', 'icon-lg'],
         className: 'h-6 w-6 px-0.5 py-0.5 has-[>svg]:px-0.5',
       },
@@ -93,6 +94,7 @@ function Button({
   disabled,
   asChild = false,
   loading,
+  type = 'button',
   ...props
 }: React.ComponentProps<'button'> &
   VariantProps<typeof buttonVariants> & {
@@ -109,7 +111,7 @@ function Button({
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, fullWidth, isDisabled: isDisabled, className }))}
-      type={props.type || 'button'}
+      type={type}
       disabled={isDisabled}
       {...props}
     >

@@ -10,7 +10,7 @@ export const KitchenSinkContainer = ({ header, subHeader, children }: KitchenSin
   return (
     <div className="mb-4">
       {header !== '' && (
-        <Text style="h2" className="font-regular mt-6 tracking-tight uppercase">
+        <Text style="h2" className="font-regular mt-6 mb-2 tracking-wider uppercase">
           {header}
         </Text>
       )}

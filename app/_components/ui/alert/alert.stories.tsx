@@ -1,10 +1,10 @@
 import { StoryFn, Meta } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { Alert } from './alert'
-import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
-import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
-import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
 import { TbUser, TbCheck, TbAlertTriangle, TbInfoCircle, TbAlertCircle } from 'react-icons/tb'
+
+import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS, KitchenSinkBox, KitchenSinkContainer } from '@/utils/storybook'
+
+import { Alert } from './alert'
 
 export default {
   title: 'Design System/Alert, Banner',

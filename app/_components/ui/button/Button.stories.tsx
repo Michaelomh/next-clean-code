@@ -1,10 +1,9 @@
 import { StoryFn, Meta } from '@storybook/react'
 import { fn } from '@storybook/test'
 import { Button } from './button'
-import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS } from '@/utils/storybook/constants'
-import { KitchenSinkContainer } from '@/utils/storybook/kitchen-sink-container'
-import { KitchenSinkBox } from '@/utils/storybook/kitchen-sink-box'
 import { TbUser } from 'react-icons/tb'
+
+import { KITCHEN_SINK_DECORATORS, KITCHEN_SINK_PARAMS, KitchenSinkBox, KitchenSinkContainer } from '@/utils/storybook'
 
 export default {
   title: 'Design System/Button, IconButton',
@@ -14,13 +13,15 @@ export default {
       description: 'Sets the `Button` text.',
       table: { category: 'Content', type: { summary: 'React.ReactNode' } },
       control: { type: 'text' },
-      defaultValue: { summary: 'Button' },
     },
     variant: {
       description: 'Sets the `Button` variant style.',
       control: 'select',
-      options: ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'],
-      table: { category: 'Display', type: { summary: 'default | secondary | outline | ghost | destructive | link' } },
+      options: ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link', 'unstyled'],
+      table: {
+        category: 'Display',
+        type: { summary: 'default | secondary | outline | ghost | destructive | link | unstyled' },
+      },
       defaultValue: { summary: 'default' },
     },
     className: {
@@ -41,9 +42,9 @@ export default {
     type: {
       control: 'select',
       options: ['button', 'submit', 'reset'],
-      description: 'Sets the `Button` size.',
+      description: 'Sets the `Button` type.',
       table: {
-        category: 'Function',
+        category: 'Feature',
         defaultValue: { summary: 'button' },
         type: { summary: 'button | submit | reset' },
       },
@@ -90,19 +91,23 @@ export default {
     },
   },
   args: {
-    onClick: fn(),
+    children: 'Label',
     variant: 'default',
     size: 'md',
     disabled: false,
     loading: false,
-    children: 'Label',
     fullWidth: false,
     asChild: false,
+    onClick: fn(),
   },
 } as Meta<typeof Button>
 
 const ControlTemplate: StoryFn<typeof Button> = (args) => {
-  return <Button {...args} />
+  return (
+    <div className="flex w-40 items-center justify-center">
+      <Button {...args} />
+    </div>
+  )
 }
 
 export const Controls = ControlTemplate.bind({})
@@ -250,6 +255,34 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         <KitchenSinkBox description="" span={4}></KitchenSinkBox>
       </KitchenSinkContainer>
 
+      <KitchenSinkContainer header="Unstyled variant" subHeader="Showcases all unstyled variants">
+        <KitchenSinkBox description="button" span={4}>
+          <Button variant="unstyled">unstyled</Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="button + icon" span={4}>
+          <Button variant="unstyled">
+            <TbUser />
+            unstyled
+          </Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="icon" span={4}>
+          <Button variant="unstyled" size="icon-md">
+            <TbUser />
+          </Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="loading" span={4}>
+          <Button variant="unstyled" loading>
+            loading
+          </Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="disabled" span={4}>
+          <Button variant="unstyled" disabled>
+            disabled
+          </Button>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="" span={4}></KitchenSinkBox>
+      </KitchenSinkContainer>
+
       <KitchenSinkContainer header="Link variant" subHeader="Showcases all link variants">
         <KitchenSinkBox description="link button (md)" span={4}>
           <Button variant="link">link</Button>
@@ -379,6 +412,21 @@ const KitchenSinkTemplate: StoryFn<typeof Button> = () => {
         </KitchenSinkBox>
         <KitchenSinkBox description="spinner placement end" span={8}>
           <Button loading loadingText="Please wait" spinnerPlacement="end" />
+        </KitchenSinkBox>
+      </KitchenSinkContainer>
+
+      <KitchenSinkContainer header="Scenarios">
+        <KitchenSinkBox description="Button group" span={8}>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="divide-muted-foreground divide-x">
+              <Button className="rounded-none first:rounded-l-md last:rounded-r-md">Left</Button>
+              <Button className="rounded-none first:rounded-l-md last:rounded-r-md">Middle</Button>
+              <Button className="rounded-none first:rounded-l-md last:rounded-r-md">Right</Button>
+            </div>
+          </div>
+        </KitchenSinkBox>
+        <KitchenSinkBox description="Split button (add with dropdown menu)" span={8}>
+          <p>see https://www.shadcnui-blocks.com/components/button</p>
         </KitchenSinkBox>
       </KitchenSinkContainer>
     </>
